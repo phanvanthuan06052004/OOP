@@ -1,0 +1,92 @@
+Map
+
+public class Student {
+	primitive String id;
+	
+	private int yob;
+
+	private Integer ypb; //tốn ram hơn
+
+}
+
+Map<Integer, String>
+
+Map<int, String>
+
+Classs TRAI BAO - WRAPPER CLASS (BOXING/UNBOXING)
+
+OOP/JAVA CHÍNH LÀ OOP
+
+*MỌI THỨ TRONG CODE JAVA PHẢI LÀ OBJECT!!!Ưhiện nay javaa có 2 loại data type: PRIMITIVE vs. OBJECT
+
+PRIMITIVE: byte, short, int, long, float, double, charr, boolean
+8 kiểu dữ liệu nguyên thủy
+
+int yob = 2003; ///tốn đúng 1 vùng ram 4 byte ONOFFONOFF TRÁN để ra đc 2003
+OBJECT : kiểu đối tượng, trong nó phức tpaj hơn, ko chỉ value lấy ra xài luôn
+toons2 vùng ram. 1 con trỏ/ biến obj = new object nào đó
+lưu tọa độ vùng new	(1 laotj value khác)
+
+Scanner, Math, String			, Dog, Cat, Racer, Cabinet, Shelf,
+StringTokenizer, file, fileInputStream
+bên trong class từa lưa info + hàm()
+
+TÌM CÁCH BIẾN JAVA THUẦN 100% OBJECT!!!
+số 1  2 3 5 7 -5 -10 int
+
+-mô  tả:
+	- giá trị/đại lượng: 1, 2
+	- nguyên con, trọn vẹn ko lẻ miếng nào về giá trị
+- mô tả hành động
+  	-1 < 2
+	- 3 > 0 
+	- so sánh cá đại lượng của nhau
+
+HÓA RA CÁI ĐÁM Ở TRÊN CÓ CHUNG ĐẶC ĐIỂM LÀ KO LẺ MIẾNG NÀO, MANG GIÁ TRỤ 
+		CÒN SO SÁNH DDC LẪN NHAU -> CHÚNG THUỘC NHÓM Integer
+
+class Integer xuất hiện/ nhóm những thằng ko lẻ miếng nào!!!
+7 ĐÓI TƯỢNG TRÊN THUỘC NHÓM/CLASS INTEGER (Integer)
+xuất hiện để nó bao cái vlaue int lại thàn object
+
+public class Integer {
+	privite int value;
+
+	public Integer(int value) {
+		this.value = value;
+}
+
+	//get/set()
+	
+	//HÀM SIÊU ĐẶC BIỆT
+Public static int parseInt(String num) {
+
+	biến chuỗi thành số để đem ra sài;
+
+}
+
+int yob = Integer.parseInt(sc.nextLine());
+
+//HỒ BƠI, POOL
+//XÀI INTEGER THÌ SAO: CỰC KÌ LINH HOẠT, CÓ NHIỀU CACHS
+//CÂN NHẮC KHI XÀI INTEGER, KHI NÀO HỎI OBJECT HỎI OBJECT THÌ MỚI DÙNG, VÌ TỐN RAM
+//KO ĐẶC BIỆT GÌ CẢ int cho tiết kiệm ram, nhanh
+
+int yob = 2003; //4 byte trong ram
+Integer yob = new Integer(2003); //
+Integer yob = 2003; //new ngầm, vẫn new nhưng hg viết ra
+		    //BOXING, ĐÓNG HỌP THẰNG PRIMITIVE/LITERAL
+
+int a = yob; //thì sao, 1 thằng là con trỏ, 1 thằng primitive
+		//MỞ VÙNG RAM BỰ INTEGER RA, LÔI ĐÚNG VALUE INT RA XÀI
+
+//KHI THIẾT KẾ CLLECTION FRAMEWORK, CÁC GIỎ Ở ĐÂY/ TÚI CHỈ CHƠI VỚI OBJECT
+List<Integer> arr = new ArrayList(); //okie
+List<int> arr = new ArrayList(); //đéo cho, bố chỉ choi con trỏ
+//giỏ tao chỉ đựng object/con trỏ. Int vào tao éo chịu 
+
+
+số 0.1 3.14 9.8  10%  float/double
+
+PHÀM NHỮNG THỨ QUANH TA MÀ GOM NHÓM ĐC, ĐẶT TÊN CHUNG CHO NHÓM ĐC
+THÌ SẼ XUẤT HIỆN NHÓM/ KHUÔN/ CLASS/ PHÂN LOẠI

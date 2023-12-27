@@ -1,0 +1,14 @@
+-Object lẻ(đặc itnhs + hành vi)
+- object thùng chứa (container) chứa nhiều object khác bên trong
+
+-svA, 				svB, SvC, thayA, thayB, congdanA, congdanB
+nhiều bộ phận cơ thể				nhiều bộ phận
+bộ quần áo					làm nhiều việc kiếm tiền
+nhiều môn học tham gia				dạy nhiều môn học 
+
+-tủ A -> chứa nhiều sách		[]
+-tủ B -> chứa nhiều hồ sơ sv		[]
+-kệ C -> chứa nhiều đồ lưu niệm		[]
+-xe khách -> nhiều hành khách		[]
+-rạp A -> nhiều khán giả		[]
+-> nhóm Cái - Tủ, thùng - chứa, container, cabinet, staf

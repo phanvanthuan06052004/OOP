@@ -1,0 +1,192 @@
+Fun<int>
+
+==================
+ỨNG DỤNG CỦA DELEGATE - DELEGATE DÙNG ĐỂ LÀM GÌ??
+1. DÙNG ĐỂ MỞ RỘNG KHẢ NĂNG CỦA 1 OBJECT BẤT KÌ
+- TỨC LÀ 1 OBJECT ĐC THIẾT KẾ TRƯỚC ĐÓ, CÓ THỂ LÀM ĐC THÊM NHIỀU CÔNG VIỆC MÀ LÚC THIẾT KẾ RA NÓ, NGƯỜI TA CHƯA NGHĨ RA, HOẶC DỰ KIẾN OBJECT SẼ LÀM ĐC 1 ĐIỀU GÌ ĐÓ, NHƯNG CHƯA BIẾT CỤ THỂ LÀ GÌ -> ĐẾN 1 LÚC SẼ LÀM ĐC (LOOSE COUPING)
+
+
+2. DÙNG ĐỂ XỬ LÍ CÁC SỰ KIỆN - EVENT -> ĐIỀU GÌ ĐÓ XẢY RA TRÊN OBJECT - ĐẶC BIỆT LIÊN QUAN WINDOWS-FORMS APP DESKTOP
+CÁC OBJECT TRÊN WINDOWS FORMS, THÌ ĐÓ LÀ 1 OBJECT GẦN "HOÀN CHỈNH"
+-NÓ CÓ DẶT TÍNH , HÀNH ĐỘNG NHƯ MỌI CLASS
+	button btnExit;
+	btnExit = new Button():
+	btnExit.Text = "Exit"
+	......
+	GẦN HOÀN CHỈNH: NÓ HIỂN THỊ TRÊN MÀN HÌNH NGON LÀNH, NHƯNG NÓ CÒN VÔ DỤNG - CLICK VÀO NÓ KO BIẾT LÀM GÌ
+-VÌ PHẦN NÀY TÙY THUỘC VÀO AI ĐÓ  - AI ĐÓ LÀ DEVELOPER XÀI NÚT NÀY KHI VIẾT CODE
+
+-ĐỂ NÚT BẤM LÀM ĐC ĐIỀU GÌ, THÌ CẦN DÂN DEV VIẾT NỐT ĐOẠN CODE LÀM GÌ KHI BỊ CLICK
+-class Button {
+	-name: _____
+	-text: _______
+	-color: _______
+
+	Click(tên hàm here!!! delegate nhận vào, delegate xử-lí-gì-đó) {
+		làm gì đâu biết, chừa sẵn để nhét hàm của AI XÀI NÚT NÀY, DEV NÀO XÀI THÌ ĐƯA CODE VÀO
+	-> ĐƯA CODE VÀO, ĐƯUA HÀM VÀO, ĐƯA HÀM CỦA CHÚNG TA VÀO,
+
+	GọiHàmCủaDevBênNgoàiĐưaVào() 
+	}
+
+}
+
+HàmXửLíClick() {
+	code của dev xài nút bấm làm cái gì đó
+}
+//HẬU TRƯỜNG LÚC KÉO THẢ NÚT BẤM, CODE, PROPERTY
+Click += HàmXửLíClick; //gán con trỏ hàm cho sự kiện Click chừa chỗ 
+
+TUI CLICK BUTTON MỞ RỘNG KHẢ NĂNG CỦA TÔI, CHÁP NHẬN XÀI HÀM CỦA CÁC ANH EM BÊN NGOÀI, TUI BUTTON ĐƯA HÀM CHO BUTTON TUI ĐI, TUI GỌI CHO
+
+WINDOWS KIỂM SOÁT CLICK, GỌI NÚT BẤM CLICK KHI USER NHẤN NÚT, NÚT ĐC WINDOWS ĐẨY MẠNH CLICK, CLICK CHẠY THÌ GỌI HÀM DELEGATE MÌNH CHẠY -> CHUỖI EVENT XẢY RA, VÀ NÚT BẤM LÀM ĐC MỌI VIỆC THEO CÁCH AI ĐÓ MUỐN
+
+VIII. WINDOWS FORMS VÀ STYLE VIẾT CODE
+-CÁCH VIẾT CODE HIỆN NAY GỌI LÀ STYLE ALL - IN - ƠN,
+	1 PROJECT CỦA 1 SOLUTION,
+		TOÀN BỘ FORM - UI
+			TRONG FORM CHỨA CODE XỬ LÍ SỰ KIỆN
+			TRONG FORM CHỨA LUÔN CẢ CODE LIÊN QUAN DATA ĐỨNG SAU FORM
+1 PROJECT 1 FORM CHỨA VỪA DESIGN & CODE EVENT & CODE DATA LUÔN
+
+>>>>>NẾU TA CẦN DATA KO PHẢI TỪ RAM (NEW LIST())
+			MÀ LÀ TỪ DATABASE SQLSERVER, CODE NÊN SỬA THẾ NÀO??? ALL-IN-ONE				>>>>>KO TỐT VÌ CODE EVENT TRỘN VỚI CODE XỬ LÍ DATA 
+			(CODE NGHIỆP VỤ KHÁCH HÀNG: ko mượn quá 5 cuốn, tính giảm giá)
+
+			KO TỐT VÌ FIX VỚI SQLSERVER
+
+		>>>>DATA KO TỪ SQLSERVER, MÀ TỪ MYSQL, HOẶC....
+
+		CODE PHẢI COPY/PAST SANG DỰ ÁN KHÁC, SỬA
+
+		DÂN DEV GẶP NHIỀU ÁC MỘNG, TRONG ĐÓ CÓ ÁC MỘNG MAINTAIN 2 APP ĐỒNG THỜI, 		SQLSERVER, MYSQL UI THÌ GIỐNG, DB KHÁC, CÂU LỆNH SELECT KHÁC
+		..
+
+>>>>TÁCH UI (FORM VÀ EVENT) RA RIÊNG
+>>> XỬ LÍ DATA RA 1 CHỖ RIÊNG -> THAY THOẢI MÁI THÔI
+=============================================
+
+KIẾN TRÚC 3 LỚP      3-LAYER TÁCH RIÊNG CÁC THÀNH PHẦN UI VÀ DATA 
+
+UI: -> HIỂN THỊ VÀ QUẢN LÍ SỰ KIỆN. TRIỆU GỌI DATA TỪ ĐÂU ĐÓ
+DATA: -> CUNG CẤP DATA CHO UUI, NHẬN YÊU CẦU XỬ LÍ DATA TỪ UI: lấy hết data, search ai đó, uupdate ai đó, xóa 1 ai đó,...
+	-> CUNG CAAPS DATA CHO NHIỀU UI KHÁC: WED, FORMS, MOBILE
+	.>>>>>>>RE-USE MỨC CAO
+		>>>VIẾT THEO STYLE THUE VIỆN-LIBARY- DEPENDENCY-.DLL TÁCH RỜI CHO NHIỀU NƠI REFERENCE VÀO 
+			>>>>TÁCH PROJECT, THÊM MỚI PROJECT
+
+BAO NHIÊU PROJECT BẤY NHIÊU .DLL (JAR CỦA BÊN JAVA)
+===============================================================
+TƯ DUY THIẾT KẾ CODE - CÁU TRÚC CODE CỦA BÀI UTE.V2
+
+	UI					Chứa data phục vụ Form			định dạng dữ liệu phục vụ
+	|						|						|
+class Form ListStudent.cs - UI		StudentRepositorySqlServer			Class Student {get set, Id, Name..}
+	StudentRepoSqlServer _repop		List<Student> _ds;			{
+		_repo
+		ăn theo hàm bên kia --->							id, Name, yob, Address, {get; set}
+       dgvStudentList	--->			.GetAll() -> List<Stuudent>		}
+	btnAdd()	--->			.Add(Student x)
+	btnUpdate()	--->			.Update(Student x)
+	btnDelete()	--->			.Delete(id)
+	btnSearch()	--->			.Search(Keyword)
+						cần có lệnh xuống Sqlserver
+
+>>>>>>>TUI MUỐN CHUYỂN SANG XÀI MYSQL, TA CẦN 1 CLASS KHÁC CUYNG CẤP DATA PPHUCJ VỤ FORMS NHƯNG DATA LẤY TỪ MYSQL
+
+CHỈ CẦN THÊM 1 CLASS Ở VÙNG PHỤC VỤ DATA CHO FORM, FORM KO CẦN ĐỔI, NHỜ BẠN CODE 
+
+
+
+	UI					Chứa data phục vụ Form			định dạng dữ liệu phục vụ
+	|						|						|
+class Form ListStudent.cs - UI		StudentRepositoryMySQL			Class Student {get set, Id, Name..}
+	StudentRepoSqlServer _repop		List<Student> _ds;			{
+		_repo
+		ăn theo hàm bên kia --->							id, Name, yob, Address, {get; set}
+       dgvStudentList	--->			.GetAllStudent() -> List<Stuudent>		}
+	btnAdd()	--->			.AddAStudent(Student x)
+	btnUpdate()	--->			.Update(Student x)
+	btnDelete()	--->			.Delete(id)
+	btnSearch()	--->			.SearchStudentByNameAndAddress(keyword)
+
+						.SearchById(String id)
+						cần có lệnh xuống mySQL
+
+
+
+	UI					Chứa data phục vụ Form			định dạng dữ liệu phục vụ
+	|						|						|
+class Form ListStudent.cs - UI		interface IStudentRepository			Class Student {get set, Id, Name..}
+	IStudentRepository _repop								{
+		_repo.
+		ăn theo hàm bên kia --->							id, Name, yob, Address, {get; set}
+       dgvStudentList	--->			.GetAllStudent() -> List<Stuudent>		}
+	btnAdd()	--->			.AddAStudent(Student x)
+	btnUpdate()	--->			.Update(Student x)
+	btnDelete()	--->			.Delete(id)
+	btnSearch()	--->			.Search(Keyword)
+						.SearchById(String id)
+
+						class StudentRepositoryMySQL : IStudentRepository
+						class StudentRepositorySqlServer : IStudentRepository
+
+
+class Form ListStudent.cs - UI
+	IStudentRepository _repop = new StudentRepositoryMySQL()
+	IStudentRepository _repop = new StudentRepositorySqlServer()
+						MongoDB() 
+					DI: Dependency Injection 
+
+
+
+
+	UI					cung cấp dịch vụ cho UI		Chứa data phục vụ tầng Service				định dạng dữ liệu phục vụ		DB
+	|					tính toán trên data				|						|
+class Form ListStudent.cs - UI			Service				interface IStudentRepository				Class Student, Account, Order		TABLE
+	IStudentRepository _repop													{
+		_repo.
+		ăn theo hàm bên kia --->												id, Name, yob, Address, {get; set}	TABLE
+       dgvStudentList	--->			checkLogin()			.GetAllStudent() -> List<Stuudent>			}
+	btnAdd()	--->			checkVoucher()			.AddAStudent(Student x)
+	btnUpdate()	--->			checkValidation()		.Update(Student x)
+	btnDelete()	--->			TÊN HÀM MANG Ý 			.Delete(id)
+	btnSearch()	--->			NGHĨA CẢU TÍNH NĂNG		.Search(Keyword)
+						NGƯỜI DÙNG HƠN LÀ		.SearchById(String id)
+						Ở MỨC THÔ CƠ SỞ DỮ LIỆU 
+										class StudentRepositoryMySQL : IStudentRepository
+										class StudentRepositorySqlServer : IStudentRepository
+
+
+	UI LAYER				BUSINESS LOGIC LAYER		DATA ACCESS LAYER
+							BUS/BLL			DAL
+
+
+
+
+
+Class Product								DRIVER CSDL					DRIVER CSDL	Create table Product			DBMS
+{									CLASS/METHODS						{						MYSQL 
+	public int id {get; set;}					<------------>						id int identity primarykey			SQL server 
+	public String name {get; set;}					SQL							name nvarchar(40)				Oracle/DB2
+	....								ENTITY FRAMEWORK							...														(ORM-OBJECT RELATIONAL MAPPING				}
+}
+ 
+new Product () {id=??, name = "Sting dâu đỏ"}										insert into Product(name)  value("Sting dd")
+
+									ADO.NET       ``````````````JDBC
+									ENTITY FRAMEWORK            HIBERNATE
+										doload về dưới dạng thư viện - DEPENDECE 
+										NUGET				MAVEN,GRADLE 		NPM
+										GUI/CMD
+
+									DbContext------------>driver--------------------->DBMS
+															nằm im trong server 
+											Connection String - chuỗi kết nối		phục vụ data qua SQL											calss kế thừa :			ghi đường dẫn/ info đến server, account
+									DbContext ----CSDL mình tương tác với.....
+									Product		Table
+									Student		Table
+									Order		Table 
+
+========================================================
+dotnet ef dbcontext scaffold "Server=localhost;Database=ContactDB;Trusted_Connection=true;Encrypt=false" "Microsoft.EntityFrameworkCore.SqlServer" --output-dir "Models" --context-dir "DataAccessLayer"

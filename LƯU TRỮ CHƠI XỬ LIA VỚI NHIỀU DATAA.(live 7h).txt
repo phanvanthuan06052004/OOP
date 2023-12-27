@@ -1,0 +1,125 @@
+*LƯU TRỮ CHƠI/ XỬ LIA VỚI NHIỀU DATAA/ NHIỀU OBJKECT
+ THÌ TA CAANF MUA CÁI TỦ, GIỎ, BALO, THÙNG, TỦ, PHÒNG ĐỂ DÙNG NHIỀU ĐỒ MUA CÁI TÚI, MUA CÁI TỦ, XÂY CÁI PHÒNG, CHÍNH LÀ NEW CÁU TUI()
+NEW CÁI TÚI(), NEW CĂN PHÒNG()
+PHẢI CÓ MỘT CÁI THÙNG CHỨA THỰC ĐC TẠO RA ĐỂ BỎ ĐỒ VÔ
+DO ĐÓ PHẢI NEW THUGFN CHUWEAS LÀ CHẮC CHẮN RỒI
+
+
+QUAN ĐIỂM LẬP TRÌNH: NEW ĐỂ CÓ VÙNG RAM LƯU TRỮ INFO + HÀM XỬ LÍ INFO THEO ENCAPSULATION
+object trong ram chính tương đuuơng món đồ thật ngoài đời điện thoại trên tay bạn có màu sắc, giá tiền, hành động gọi nghe, chụp ảnh, bạn phải mua về, nhà sx phải tạo ra, new ra bạn mới có sài
+
+mình trừu tượng hóa món đồ thật thành  object trong lập trình thì cũng cần new để có vùng ram có data + hành động
+
+MUA TỦ ĐỰNG NHIỀU ĐỒ TA CẦN NEW TỦ() CÓ KHONG GIAN ĐỰNG  ĐỒ VÀ CÁC HÀNH ĐỘNG TƯƠNG ỨNG
+
+TỦ  tuCuaTui = new TỦ(); //trong RAM sẽ có vùng ko gian để đựng đồ						//ngoài đời Tủ chiếm 1 góc phòng ddeert ta đựng đồ
+cái tủ cho mình làm ngì thì mình làm đó/encapsulation/abstraction đấy
+Mua tivi mà ko icos smart, chỉ xem cab tohy, làm soa duywwtj wed đc
+Mua tivi mà smart thì mới duyệt wed
+đóng gói hành động đi kèm object. Mua dog về thì nó giỡn với mình
+
+tuCuaTui.adđoVao(món dồ đưa vào trong tủ) //tủ cho phép mình bỏ đồ vô 
+
+y chang lò nướng cho mình bỏ con gfaf vào, để nướng
+LoNuong loCuaTui = new LoNuong(); //mua lò về, chiếm góc bếp
+
+loCuaTui.addDoNuong(COn-gà để nướng)
+
+TỦ LÀ OBJECT CHỨA NHIỀU ĐỒ KHÁC
+1. MUA TỦ			Tủ tuCuaTui = new Tủ();
+2.MUA ĐỒ ADĐ VÔ TỦ		tuCuaTui.adđMonDo(new/ mua 1 món dồ thảy vô tủ)
+
+MUA CÁI TÚI, MUA CÁI GIỎ, MUA CÁI THUUGNF, NEW TÚI() NEW GIỎ(),, CÓ khóa dây kéo bỏ
+				món đồ mình muốn cất
+tuiCuaTui.addMonDo(mua món đồ bỏ vào túi - new món đồ())
+
+CÓ 2 LAOIJ TỦ
+1. TỦ LOẠI 1: FIX CỨNG SỐ ĐỒ ĐỂ VÔ ,CHỈ ĐỂ BỎ VÔ 1 SỐ GIỚI HẠN MOINS ĐỒ
+CHÍNH LÀ MẢNG [SỐ ĐỒ ĐỂ VÔ]
+MMANGR LÀ KHAI BÁO NHIỀU BIẾN NHIỀU CHỖ CHỨA [FIX SỐ CHỖ]
+MẢNG Y CHANG XE Ô TÔ CHỞ KHÁCH [16 CHỖ ]
+			RẠP PHIM A/DÒNG CHIẾU A [100 GHẾ]
+CHỨA TẠO ĐỘ VÙNG NEW MÓN DỒ
+[I] = NEW MÓN DỒ() CỨ THOIARMAIS NỪM ĐÂU ĐÓ, TA LƯU TỌA ĐỘ
+
+Student arr[] = new Student[100];
+//sẽ có 100 chõ ngồi cho sv à nhen, chưa có bnanj nào cụ thể
+//arr chính là biến má mì, teenn gọi tắt cho 1 caois tủ cho 100 ghế
+
+//tên mảng chính là tên gọi cho 1 cái tủ fix chỗ ngồi !!!!!
+//viif mình trỏ đến new [số chỗ]
+
+//bỏ đồ vào mảng, ko cần dùng hàm, hành động cua tủ, cho sơF TRỰC TIẾP CHỖ ĐỂ 
+
+arr[0] = new món đồ bỏ vô, new món đồ bỏ vô;
+//== tuCuaTui.adđMonDo(new món đồ);
+//tuCuaTui vị trí 0 đc cất món dodoo new món đò
+
+//monsn đồ new nằm tỏng HEAP, năm fbeen ngoài tủ, tủ chỉ lưu dnah sách tham chiếu
+//tủ chứa dnah sách bệnh nhân, bệnh nhân vẫn năm ftornng phòng điều trị
+//gv dữu dsd svieen, sv ở quê đâuc so sao
+
+*DÙ TỦ LAOI J1 HAY 2 THÌ ĐIỀU CHỨA NHIỀU ĐỒ: ĐỒ ĐỂ THẬT SỰ VÀO TRONG TỦ
+HAY CHỈ GIỮ DNAH SÁCH THAM CHIẾU ĐỀU OK,
+	TỦ HỒ SƠ GIỮ DANH SÁCH THAM CHIẾU, GG MEET GIỮ DNAH SÁCH THAM CHIẾU
+SANH SÁCH KÍ TÊN (TỦ) CHỨA THAM CHIẾU
+
+TỦ QUẦN ÁO CHỨA ĐỒ THẬT LUON - MẢNG PRIMITIVE VLAUE LẤY XÀI LUÔN
+
+2.TỦ LOẠI 2: CO GIÃN SÓ ĐỒ ĐẺ VÔ, THOẢI MÁI ĐỂ ĐỒ VÔ, CẦN THÊM CHỖ
+	 CÓ THÊM CHỖ KO CẦN XIN, CỨ ĐỂ ĐỒ VÔ LÀ THÊM CHỖ, GIỐNG NỒI CƠM THẠCH SANH, GIỐNG GIẾNG KHƠI, MÚC NƯỚC LẠI CÓ NƯỚC
+	ArrayLisst, Vector   | HashSet, TreeSet   | HashMap, TreeMap
+ban  đâu ko có chỗ nào cả, ko đáy
+cứ nhét đồ vào, tao htheem chỗ
+ko sờ [i] vào vị trí chỗ
+xin qua dây kéo, khóa, ngăn, canhs cửa, mở ra nhét đồ vô
+tuCuaTui [i] = món đồ bo vô -> mảng
+tuCuaTui.add(món đồ bỏ vô) bỏ vô qua hành đông j của tủ, ko sờ trực tiếp ngắn chứa [i]
+	bỏ vô tự tủ lo bên trong
+
+VẪN CODE NHƯ XƯA NNAY: NEW TỦ, .GỌI HÀM HÀNH ĐỘNG CUA RTUR ĐỒ NEW RIENG ĐỂ DÒ VÔ MUA TỦ VÀ MUA ĐỒ VÀ CẤT ĐỒ
+
+NEW 3 LOẠI TỦ NÀY, GIOONGNS CÁC THUOUWNG HIỆU TÚI XÁCH BALO BẠN MUA
+
+ArrayList, Vector   | HashSet, TreeSet  | HashMap, TreeMap
+
+ADDĐồ(MÓN ĐỒ KHÁC ĐI MUA) VÀO TỦ Ở NGĂN THỨ [I] NÀO ĐÓ NHÌN THEO KIỂU AMNGR 
+
+ĐỀU CHỨA THAM CHIẾU. LINH HỌA TRONG VIỆC ĐỂ CÁC MÓN ĐỒ
+			BÊNH NHÂN ĐÂU CẦN DỒN VÀO PHÒNG BS, BS ĐIỀU TRỊ ĐC VÌ 
+			CÓ DS BỆNH NHÂN TỎNG TỦ HỒ SƠ/EXCEL
+
+Tủ thật túi thạt mua về đẻ xài, NEW ĐC, KO PHẢI LÀ ABSTRACT, HOÀN HẢO ĐỂ DÙNG, FULL CODE HÀNH ĐỘNG
+COn      ArrayList, Vector    |    	HashSet, TreeSet	| HashMap, TreeMap
+
+phân loại cao hơn cho tuur/ giỏ cụ thể
+CHA 	List				Set				Map
+ABS/INTF dnah sách  		  tập hợp 			bộ ánh xạ, từ này ra kia 
+								KEY, MÓN ĐỒ - VALUE
+vào thứu tự nào
+ra thứ tự đó
+mảng nâng cao
+co giãn kichcs thước
+vào trước, ngồi[0] 
+vào sau, ngồi [1]			HashSet lộn xộn thứ tự
+					TreeSet sắp xếp tự động !!!
+					ko đc lặp lại món đồ thứ 2
+
+ngoài đời
+thống kê số vé bán			đếm số người thực sự xem phim
+số lượt người mua			ko đếm lượt 
+số lượt người ghé thăm			mỗi người xh 1 lần, ko hơn dù bạn
+một người có thể đến nhiều lần		xem 2 3 n lần
+
+CÁC TUUR LIST (ARRAYLIST, VECTOR,..)
+	SET(HASHSET, TREEESET )		ĐỀU CHỨA CÓ GIÃN NGĂN TỦ, THÍCH THÊM THÌ THÊM
+	MAP (HASHMAP, TREEMAP)		KO ĐÁY, DOREMON
+					CHỈ LƯU THAM CHIẾU, LUU CON TRỎ, ADD CON TRỎB
+					VÀO, VÙNG NEW MÓN ĐÒ THOẢI MÁI Ở HEAP
+					ADD VÀ LẤY QUA HÀM HÀNH ĐỘNG MỞ DÂY KÉO, NGĂN
+					
+					MẢNG OBJECT Y CHANG VẬY LUON
+					CHỨA THAM CHIEEUSU, LƯU CON TRỎ ADD LẤY QUA [I]
+					VÙNG NEW MÓN ĐỒ THOẢI MÁI TRONNG HEAP
+
+Y CHANG QUẢN LÍ DANH SÁCH NGOÀI ĐỜI, TỦ HỒ SƠ

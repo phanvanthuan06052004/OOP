@@ -1,0 +1,5 @@
+1. liệt kê dnah sách cacs thợ theo từng nhóm thợ(cho biết thợ và số lượng thơ)
+2. Liệt kê dnah sách tổng thu nhập của các thợ theo thứ tự giảm dần của tổng thu nhập
+3. Liệt kê danh sách các thợ có tổng thu nhập cao nhất, thấp nhất và nhóm thợ có thu nhập lớn hơn hoặc bằng tổng thu nhập cua nhóm thợ
+4. Cho biết công việc nào được thực hiện nhiều nhất trên tất cả cá hoạt động
+5.			chưa được thực hiện trên tất cả các hoạt động

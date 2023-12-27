@@ -1,0 +1,12 @@
+1. Tên mảng . length và () má mì, vùng new bảng 
+
+2. Phần tử mảng [0 - index] . đc hay ko tùy
+	   mảng - pri[0] ko chấm dcd
+	   mảng - obj[0] . chấm xổ ra từa lưa
+	   	          nó là biến object
+	Student x	x . bình thường
+		mảng - object[0] . bình thường (tên biến có[])
+
+-----------------------------
+3.STATIC 	Student. -> xài chung cả họ sv nha
+------------------------------

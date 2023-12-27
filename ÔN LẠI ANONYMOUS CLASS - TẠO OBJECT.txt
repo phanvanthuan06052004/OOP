@@ -1,0 +1,359 @@
+**ÔN LẠI ANONYMOUS CLASS - TẠO OBJECT CON MÀ KO CHỈ ĐỊNH RÕ CLASS CÓ SẴN
+
+			-MƯỢN NEW CLASS CHA ABSTRACT ĐỂ CÓ ĐC VÙNG 
+		 	SUPER + EXTEDS/OVERIDE
+			
+			- VÙNG RAM OBJECT CON GIỐNG Y CHANG NHƯ VÙNG RAM CỦA MỌI OBJECT CON 			KHÁC TẠO TỪ CLASS CÓ SẴN
+			-VÙNG RAM BỰ NÀY VỀ LÍ THUYẾT XUẤT PHÁT TỪ KHUÔN CON ÀO ĐÓ MÀ TA KO THÈM LÀM KHUÔN VÙNG RAM BỰ NÀY GỌI LÀ THUỘC VỀ CLASS VÔ DANH
+
+-truyền thống ta tạo ra object Con là phải có Class Con trước
+  (RECTANGLE, square, Disk)
+ với các hàm @override viết sẵn, viết 1 lần, xài cho mỌI lần NEW Ta sẽ làm class con nếu ta biết chắc chắn sẽ dùng để nhân bản đc nhiều object Con trong tương lai, nó đầy đủ code theo kiểu công thức xử lí
+
+- Cách ON THE GO, ko cần class Con có sẵn, ta lợi dụng class Cha new luôn. New luôn mới chỉ có đc supper Cha, chưa có đc phần code cho Cha tự bung ra thêm 1 phần {... ta viết code cho hàm @override} Đừng quên chấm phẩy vì nó tường đương new Class Con();
+
+Cha objectLẻ = new Cha(...);  //ĂN ĐÒN LIỀN, VÌ CHA KO HOÀN HẢO
+				//CHƯA ABS, LÁT HỒI object. hàm abs
+				//ko có code để chạy
+				//CHẤM CHA, NHƯNG CON ƯU TIÊN QUA MẶT
+				//CẦN CÓ CODE CỦA CON, @VERRIDE
+			//lỡ new Cha cần viết lun code ON THE GO 
+
+Cha objectLẻ = new Cha(...) {	//BA SẼ LÀ CÁNH CHIM
+	@override 		//ĐƯA CON BAY THẬT XA
+ 	các hàm Cha cần Có code
+};
+
+Shape r1 = new Rectangle(...); //có sẵn super() + @Override làm sẵn rồi
+
+Shape xxx = new Shape(...) {
+		@override
+		các hàm cần code cho Cha here();
+};
+new Con = new Cha + phần mở rộng;        //kết thúc...
+new HCN = supper CHa + phần mở rộng làm sẵn rồi;
+
+*GIÁ PHẢI TRẢ: ĂN THEO, NEW THEO CONSTRUCTOR CỦA CHA, MÌNH KO TẠO CLASS
+RỜI KIỂU HCN, HV, CÓ PHỄU RIÊNG
+		TỰ VIẾT LẠI CODE CHO CÁC HÀM @OVERRIDE DO MÌNH KO LÀM
+		KHUÔN CÓ SẴN
+
+LỢI ĐIỂM LÀ BẤT CỨ LÚC NÀO CẦN NEW OBJECT LÀ LÀM ĐC LIỀN
+VÌ ON THE GO, MƯỢN CHA NEW ~~~SUPER
+
+*DÙNG KHI CẦN OBJECT TRONG 1 TÌNH HUỐNG NÀO ĐÓ MÀ KO MẤT CÔNG PHẢI TẠO 
+RA CLASS RƠI.... HỌC SAU NÀY
+
+*ĐÍCH ĐẾN LÀ OBJECT, VÙNG NEW, CÓ CODE ĐỂ CHẤM CHẠY
+*KHUÔN/CLASS GIÚP MÌNH TẠO OBJECT NHANH!!!
+*LẬP TRÌNH  OOP: TẠO VÙNG RAM CHỨA CODE/ HÀM XỬ LÍ ĐỂ GỌI MÀ XÀI
+LẬP TRÌNH NÓI CHUNG: VIẾT HÀM XỬ LÍ DATA
+==========================================
+TỔNG KẾT CHUNG CHO KẾ THỪA - THỪA HƯỞNG ĐẶC BIỆT & HÀNH VI
+			   - CÓ HỌ HÀNG, BÀ CON, VÌ CHUNG ĐẶC ĐIỂM
+		           - LIÊN QUAN ĐẾN CÂY PHÂN LOẠI, PHÂN LOẠI OBJ
+			    TRONG CUỘC CỦA CON NGƯỜI
+			
+			   LOÀI, CHI, HỌ, LỚP, BỘ, NGÀNH,...
+			   VEHICLE, PET, ANIMAL, VĂN PHÒNG PHẨM,,...  
+IS A KIND OF, ĐỌC 1 CHIỀU
+CON LÀ 1 PHIÊN BẢN CỦA CHA - HV LÀ 11 HCN, MÈO LÀ 1 THÚ-CƯNG
+CON THỪA HƯỞNG CÁC ĐẶC ĐIỂM VÀ HÀNH VI CỦA CHA
+
+-CHA CỤ THỂ - CON CỤ THỂ(đủ code cho cả 2)
+			Con có thể @Override nếu muốn, ko ép
+			Con có thể óc dị biệt nếu muốn, ko ép
+			Thực  ra đã có đủ từ Cha hoàn hảo rồi
+Khai Cha new Cha - dùng Cha vì CHa hoàn hảo
+Khai Cha new Con
+khai Con new COn
+
+*CHA TRỪU TƯỢNG - CON HOẶC TRỪU TƯỢNG (vô sinh, ko new đc object)
+		CON HOẶC PHẢI CODE CHO CHA
+			Con bắt buộc phải @Override cho Cha
+			Con có thể có dị biệt nếu muốn
+			Phải hoàn tất giấc mơ của Cha!!!!
+			Vì cha chỉ nói thoy, chưa làm, chưa hoàn hảo
+
+Khai Cha new Cha {....@Overrridde}; //Anonymous do làm biếng tạo Con sẵn 
+		//TẠO OBJECT CON RỒI, new Cha mà phải thêm code thì ko là Cha
+
+Khai Cha new Con, đa hình xảy ra, Con qua mặt hàm @ CHa
+Khai Con new Con
+======================================================
+CUỘC ĐUA KÌ THÚ AGAIN.....
+Hamster
+Dog
+Cat					--------|> Pet (nhân tử chung của đám Con)
+Sóc							(đặc điểm & hành vi)
+
+2 anh bạn chạy xe Exciter rượt theo con Dog
+trên đường đua lúc này có PET và Motor củng đua, cùng lane đường, đua cùng nhau, so kè 
+tốc độ, cùng MẢNG trên đường phố!!!!
+-Mô phỏng lại trong lập trình thì: Pet và Motor cùng mảng!!!! mảng nào???
+Cùng mảng thì phải cùng kiểu data type 
+pet is kind of motor -> gãy
+Motor is kind of pet -> gẫy, Motor là xế cưng, ko là thú cưng
+
+chỉ vì cùng rượt đuổi nhau, nên mới chung đường
+CẢ 2 CÓ CÙNG 1 MỤC ĐÍCH, HÀNH ĐỘNG, MỘT THẰNG CHẠY ÉP XUNG ĐỂ THOÁT
+				THẰNG KIA RƯỢT HẾT TAY GA ĐỂ BẮT ĐC THẰNG KIA
+TA KO CARE CHUYỆN GÌ KHÁC, NNGOAIF 2 ĐỨA ĐUA VỚI NHAU
+TA FOCUS VÀO HÀNH ĐỘNG CHẠY, HÀNH ĐỘNG ĐUA, HÀNH ĐỘNG RƯỢT NHAU, KO CARE CHUYỆN GÌ KHÁC
+TA ĐANG CHUNG MỤC ĐÍCH, HÀNH ĐỘNG, RÕ RÀNG TA ĐANG LÀ HỘI-ĐUA-THỦ
+
+HỘI ĐUA THỦ LÀ MỘT/GOM NHÓM NHỮNG GÃ CHỈ TẬP TRUNG VÀO VIỆC DUY NHẤT, ĐUA!!!!
+
+TA CHỈ TẬP TRUNG VÀO HÀNH ĐỘNG, TA ĐÃ CHƠI CHUNG ĐC VỚI NHAU, KO CARE XUẤT THÂN, NGOÀI ĐỜI LÀ CÓ THẬT
+ĐÂY LÀ CÁCH TA LẬP  HỘI NHÓM NGOÀI ĐỜI 
+
+HỘI NHÓM LÀ GOM NHỮNG THÀNH VIÊN CÓ CHUNG SỞ THÍCH, CHÍ HƯỚNG HÀNH ĐỘNG, KO CARE NGUỒN
+GỐC XUẤT THÂN
+VÍ DỤ: CLB-ĐI-PHƯỢT, PHƯỢT-THỦ gom những bạn từ khắp nơi , chỉ thích, quan tâm:
+				CUỘC ĐỜI LÀ NHỮNG CHUYẾN HÀNH XÁC
+				Chấp bạn là Student, Worrker, lecturee, freelancer,
+				Employee, miễn bạn sẵn sàng lên đường
+				BẠN LÀ MEMBER OF HỘI-PHƯỢT-THỦ
+				GOM NHÓM VỀ HÔI NÀO ĐÓ - 1 CLASS PHƯỢT - THỦ
+VÍ DỤ: bạn là worker, student, Lecture, pupil, Employee bạn cần cải thiện tiếng Anh
+bạn tham gia vào 1 CLB-Tiếng Anh, bsnj đc đòi hỏi rằng chỉ cần speakEanglish 
+ko care bạn xuất thân từ đâu, chúng ta chơi chugn tieengs ANh, cùng giao tiếp TA
+worker, Student, Lecture, Pupil, employee IS A MEMBER OF ENGLISH-CLUB
+						metohd duy nhất speakingEnglish
+
+VÍ DỤ: bạn là worker, student, Lecture, pupil, Employee,...
+ra phố Bùi Viện và bạn thuê 1 cái bình Shisa, đổ thuốc lào Ả-Rập, cẩ đám cùng kéo cần
+-hút Shisha
+worker, student, Lecture, pupil, Employee IS A MEMBER OF SHISHA
+chúng mình là đám/ gã nghiện ngập Shisha,   tham gia hội, phải hút theo cách 
+						nào đó
+MỖI HỘI TẬP TRUNG HÀNH ĐỘNG MÀ HỘI VIÊN CẦN PHẢI THEO!!! CHẤP HỘI VIÊN ĐẾN TỪ DDAU
+
+VÍ DỤ:worker, student, Lecture, pupil, Employee,... TIẾP TỤC PHÊ SHISHA RỒI, 
+HƯNG PHẤN TAY LÁI, RỦ NHAU ĐI TỐC ĐỘ, LÊN CON EXCITER, WINNER, RGV, REBEL, CBS....
+KÉO TAY GA ... TĂNG TỐC, CHỈ TẬP  trung vào tốc độ
+worker, student, Lecture, pupil, Employee,.... IS A MEMBER OF
+						IS A           DEATH-RECER 
+CLB ĐUA-ĐẾN-CHẾT XUẤT HIỆN VỚI HÀNH ĐỘNG ĐUA GÁC TAY GA, GÁC KIM ĐỒNG HỒ
+
+chung hành động, chung tiếng nói, ở chung với nhau phần này thoi, chung mảng chung kiểu member, chung clb, GOM NHÓM THEO HÀNH ĐỘNG, GOM THEO INTERFACE, TIẾNG NÓI CHUNG
+
+KHUÔN NÀY DÍNH DÁNG KHUÔN KIA 1 XÍU VỀ HÀNH ĐỘNG 
+ĐỂ CHÚNG CÓ THỂ CHUNG NHAU 1 CHÚT GÌ ĐÓ TRÊN HÀNH ĐỘNG
+TUUJ TẬP ĐC 1 NHÓM CÙNG HÀNH ĐỘNG, CÓ NHÓM THÌ CÓ TÊN, CÓ CLASS - CLASS LÀ CÁCH GOM NNHOMS 
+
+2 HÌNH THỨC GOM NHÓM
+-GOM TRÊN ĐẶC ĐIỂM VÀ HÀNH VI - INHERITANCE (HỌ HÀNG BÀ CON)
+INHERITANCE/ABS CLASS: TÊN CỦA 1 DÒNG HỌ NHIỀU CON CHÁU CHIA SẺ Đ Đ HVI
+
+-GOM TRÊN HÀNH VI, TỤ TẬP NHAU LÀM GÌ ĐÓ - INNTERFACE - CHUNG GIAO TIẾP (HỘ NHÓM)
+INTERFACE: TÊN CỦA 1 HỘI NHÓM ĂN CHƠI HÀNH ĐỘNG
+
+IS - A - KIND - OF CHẶT CHẼ TRONG PHÂN LOẠI(Đ ĐIỂM VÀ HÀNH VI)
+
+IS - A - MEMBER OF (G.L.CHẾ RA) HỘI-NÀO-ĐÓ (HVI, MỤC ĐÍCH) LỎNG LẺO VIỆC KẾT HỢP
+
+***INTERFACE CŨNG LÀ 1 DAGJ CLASS "CHA" VÌ CLASS LÀ GOM NHÓM VÀ ĐẶT TÊN NHÓM
+"CHA" NÀY CHỈ CÓ CÁC HÀNH ĐỘNG (ABSTRACT, KO CODE, JDK 8, 9 CHO PHÉP CÓ CODE ĐẶC BIỆT)
+ĐÁM "CON", MEMBER CÓ NHIỆM VỤ TRIỂN KHAI/THI HÀNH HÀNH ĐỘNG CỦA "CHA"
+
+INTERFACE LÀ CLB CÓ NỘI QUY CHUNG CHUNNG,
+INTERFACE LÀ NHỮNG TỔ CHỨC/ HIỆP HỌI CUNG CẤP NHỮNG TIÊU CHUẨN/ HƯỚNG DẪN CHUNG CHUNG
+
+NHỮNG HỘI VIÊN / CON PHẢI CÓ NHIỆM VỤ IMPLEMENT TẤT CẢ
+
+HIỆP HỘI ĐO LƯỜNG TCVN ĐƯAQ RA TIÊU CHÍ VỀ ATTP (nồng độ/ hàm lượng chất bảo quản tỏng tp)
+Các cơ sở sx cần theo tiêu chuẩn ày làm các sản phẩm HVN CLC
+
+INTERFACE LÀ BỘ QUY TẮC HÀNH XỬ, CAM KẾT AI ĐÓ PHẢI CẦN THEO
+
+CỤ THỂ LÀM NHƯ THẾ ÀO THÌ MỖI HỘI VIÊN PHẢI LO/LÀM
+
+*ỨNG DỤNG CỦA INTERFACE
+-giúp 1 class/object có nhiều cách hanhnf xử khác nhau, tui là member của Hội nào thì tui có hành động của Hội đó, giúp cho 1 object/con người đóng nhiều vai, vai nào thì có hành đông tương ứng Chính là 1 "hình dạng" của đa kế thừa - multi-inheritance
+
+-trong Java 1 class Co chỉ có tối đa 1 CHA - đơ kế thuuwaf, extends đugs 1 class Cha, sigle - inheritace. C++ nhiều cha, đa kế thừa
+Cha1: hàm f(...) có code
+cha2: hàm z(..) hàm f(...) có code
+cha3: hàm f(...) ... có code
+Co kế thừa cả cha1 cha2 cha3
+Hỏi rawgf Con chấm f() lấy hàm của Ai???
+Tag gia bối rối, ambigous, gọi ai bi giờ vì ai cugx có hàm f()
+
+java fix bằng cách: Co nchir kế thừa duy nhất 1 cha
+Cha hàm f() có code hay ko ko care
+Co kế thừa chỉ Cha, chấm f() thì???. Cha có f() có code xài luô
+				abstract f() thì Con phải code, chấm chạy luôn @
+
+Nhưng C++ đa kế thừa Co có quyền có bị ảnh hưởng bơi nhiều Cha, mỗi cha cho 1 tí hàm
+Con sẽ đa dagj hành động từ các cha
+
+Nay Java Con 1 cha, nhuwg lại đc quyền tham gia nhiều CLB!!! INTERFACE
+	Con 1 cha, nhưng vào chơi nhieuf CLB, chơi CLB nào thì có hđ CLB đó, vẫn đảm bảo
+	tiêu chí Con có Nhiều hành động từ bên ngoài, gioonngs như COn có hđ từ nhiueeuf
+InterFace/CLB c1 hàm abs....f() ko code
+		c2 hàm abs....f() ko code
+		c3 hàm abs....f() ko code
+
+Con extends Cha như bt, implements/ tham gia CLB C1, C2, C3
+		Con ơi mày phải có code ngay f(), chỉ duy nhất hàm f() ở COn có code 
+					@override f()
+		KO CÒN BỐI RỐI F() VÌ CHỈ CÓ DUY NHẤT 1 PHIÊN BẢN CODE F()
+
+INTERFACE CŨNG LÀ 1 DẠNG CỦA "KẾ THỪA" HÀNH DDOONNGJ, CHUNG HÀNH ĐỘNG
+
+INTERFACE LÀ BỘ QUY TẮC HÀNH XỬ/ ỨNG XỬ/CAM KẾT AI ĐÓ THAM GIA LÀM  MEMBER THÌ PHẢI THEO HÀNH ĐỘNG ĐÃ CAM KẾ, NHƯNG SÁNG TẠO TRONG HÀNH ĐỘNG (IMPLEMENT)
+
+* CODE VIẾT SAO??
+public class Con/hội- Viên implements CLB11, CLB2, CLB3 {
+
+	@Override tất cả các hành động của các CLB, tham gia nnhieeuf thì phải hoạt động nhiều;
+
+}
+
+CLB ko có đặc điểm, ko có phễu/constructor - nhưng có hàm abstract. Nhưng khi new Con
+thì CLB vẫn sẽ đc nnew đê "Ba" sẽ là canhhs chim, đưa con extends @Ovewrride Member/Con vẫn có 1 vùng RAm của CLB - chưa hàm abstract, con trõ vẫn trỏ lưng chuwngf CLB 
+Vẫn theo mô hình RAM của abstract class/Cha truền thống. Con to hoiwn Cha/ CLB về vugf RAM super() Cha CLB là super() ngầm
+
+public class Con/ Hội- vien extends Cha implement CLB1, CLB2, CLB3 {
+
+	@Override tất cả hành ddopngj của cha nếu Cha abstract class
+	@override tất cả cá hành đọng của các CLB, thamgia nhiều thì phải hoạt động nhiều;
+
+}
+
+Con đóng N vai: vai dòng họ, vai CLB, giống ngoài đời
+Nếu xui Cha, CLB có cùng tên hàm f(), ngoài những hàm khác, thì Con bị bói rối ko??
+Con ko bối rối, vì f() của Cha và các CLB toàn là abstract, Conn phải cài code @Override
+duy nhất hàm f() éo sợ ambugos
+
+*ANONYMOUS 
+object vãng lai tham gia CLB, vậy mày cũng phải hành xử như việc mày tham gia thường xuyên
+phải có hành động tương ứng mới đc tham gia, chỉ ngay lúc đó thoi, ON-THE-GO
+
+GHE NGANG MÀ CHƠI, THÌ PHẢI CHƠI/HÀNH XỬ NHƯ NGƯỜI TA ĐANG CHƠI
+
+bản chất ta có 11 nhóm nào đó trước đó, nhưng ta chỉ cần HÒA NHẬP LÚC NÀY, CHƠI LÚC NÀY, THAM GIA LÚC NÀY, MÀ KO CẦN BỘC LỘ RÕ TRƯỚC ĐÓ TA  LÀ AI, NHÓ NÀO, CHỈ CẦN BIẾT JOIN NHÓM MỚI LÚC NÀY
+
+cắt 1 hình ngẫu nhiên (object rồi đó) mà ko biết tên gọi riêng của nhóm là gì/class gì gọi theo tên phân loại chung, nhóm Cha chung -> object thuộc class CHƯA XÁC ĐỊNH, object thuộc classs ANONYMOUS
+Căn theo Cha/phân loại chug mà gọi. Hình  ngẫu nhiên đó gọi HH
+Shape x = new Shape (..) {
+		@Override
+		Hàm của phan loại Chung, class Cha abstract;
+		};
+
+------Shape r = nnew Rectangle(..); //khi đã biết object thuoocj nhóm rõ ràng trước đps Rectangle 
+
+CLBCờ x = new Student(..); //một SV tham gia CLB Cờ - Code sẵn @Override
+
+DeathRacer m = new Motor(..); //Motor đi học còn tham gia đauu code sẵn ruToDead()....@Override
+
+//gã ghé ngang, ko chuyên nhưng ham vui, chơi thifd chơi
+CLBCờ hagnxom = new CLBCo() {
+	@
+	Mày ham chơi, ghe ngag tham gia, thì phải có hành động tương ứng;
+		};
+
+ABSTRACT CLASS VÀ INTERFACE ĐỀU  LÀ 2 THỨ KO HOÀN HẢO, CHỈ NÓI MÀ KO TRIỂN KHAI LÀM
+CON/MEMBER CẦN PHẢI HOÀN TẤT NỐT CÂU HCUYEENJ KO HOÀN HẢO @OVERRIDE
+
+DÙNG THÊM KĨ THUẬT MƯỢN GIÓ BẺ MĂNG, MƯỢN CHA, CLB ĐỂ NNEW RA OBJECT THUỘC NHÓM CHA/CLB
+				@OVERRIDE ON THE GO, TAKE-AWAY
+OBJECT VÃNG LAI, KO XÁC DIDHJ NHÓM TRƯỚC MÀ MÚN THMA GIA CUỘC CHƠI, DÒNG HỌ, THÌ PHẢI HÀNH XỬ CƯ XỬ NHƯ DOGF HỌ, MEWMBER
+
+KO GỌI CHINNHNS XÁC NNHOMS CỦA BẠN, NHƯNG OGIJ BẠN THEO HÓM BẠN THAM GIA, THEO NNHOMS BẠN CHƠI ĐC MÀ!!!!!
+
+VÙNG RAM MÀ MỌI HÀNH XỬ CHẤM @ QUA MẶT NNHUW BINNHF THƯỜNG, DO LÀM BIẾNG TẠO CLASS RỜI - CONCRETE CLASS
+
+*ỨNG DỤNG CỦA INTERFACE
+-LOOSE COUPLING (GẮN KẾT LỎNG LẺO) GIÚP CHO CÁCH TỔ CHỨC CÁC CALSS CÓ RÀNG BUỘC NHAU ĐỂ LÀM NÊN CÂU CHUYỆN LỚN NHƯNG LẠI DỄ DÀNG MỞ RỘNG VÀ THAY ĐỔI
+-DÙNG INTERFACE LÀ CÁCH VIẾT CODE GIÚP LINH HOẠT, DỄ DÀNG THAY ĐỔI CODE MÀ KO PHẢI SỬA PHẦN CODE CŨ, DÙNG DEX DÀNG MỞ RỘNG CODE, THÍCH ỨNG CHO TƯƠNG LAI...
+-INTERFACE LÀ CÁCH KẾT GIAO, MỞ RỘNG GIAO TIẾP KẾT NỐI VỚI XUNG QUANH
+
+-COMPARABLE/ COMPARATOR -> DÍNH ĐẾN LOOSE COUPLING
+
+*MỤC TIÊU CUỐI CÙNG/ TỐI THƯỢNG CỦA INTERFACE: CHƠI CHUNNG VƠI SNHAU !!!!! DÙ BẠN KHÁC IETTJ TRONG HÀNH XỬ 
+MỖI THẰNG ĐUA KHÁC NHAU, NHƯNG CÙNG ĐƯỜNG ĐUA
+MỖI THẰNG HÚT KHÁC NHAU, NHƯNG CÙNG CLB PHÊ CẦN
+MỖI BẠN ĐÁNH CỜ KHÁC NHAU, NHƯNG CÙNG VÁN CỜ
+MỖI CARD ĐỒ HỌA KHÁC NHAU VỀ NĂNG LỰC XỬ LÍ, NHƯNG CHUNG KHE PII-EX
+MỖI THIẾT BỊ ĐIỆN KHÁC NHAU VỀ CÔNG NĂNG/TÍNH NĂNG SỬ DỤNG, NHƯNG CHUNG Ổ CẮM ĐIỆN 220V
+
+=================================================================
+**********CHỐT HẠ OOP**********(4 TÍNH CHẤT CỦA OOP)
+- OOP CONCEPTS/ OOP PRINCIPLES/ FUNDAMENTAL CONCEPTS OF OOP/ FOUR PILLARS OF OOP
+1. ABSTRACTION - TRỪU TƯỢNG HÓA MỌI VẬT ( ĐỪNG NHẦM LẪN VỚI ABSTRACT CLASS)
+- là cách tư duy, cách suy nghĩ, chuyển đổi, biễu diễn những thứ phức tạp trong cuộc sống thành những thứ đơn giản hơn nhưng vẫn diễn tả đúng ý nghĩa của sự vật ban đầu
+- là cách nói về những thứ phức tạp trong cuộc sống thông qua 1 thứ khác đơn giản hơn, vẫn ko làm mất đi ý nghĩa của thứ phức tạp ban đâù
+- biễu diễn lại 1 thứ phức tạp ngoài đời để dễ hiểu hơn
+- cách lấy ra những thông tin quan trọng nhất, tiêu biểu nhất của 1 object phức tạp ngoài đời để biễu diễn lại cho ai cũng hiểu đc thứ phưc tạp
+- Một thứ phức tạp ngoài đời đc biễu diễn qua 1 thứ đơn giản hơn, vẫn ko làm mất chất 
+-USING A SIMPLE THINGS TO REPRESENT THE COMPLEX THINGS 
+- EXTRACT THE SIGNIFICANT FEATURES/ CHARACTERISTICS OF A COMPLEX THINGS TO FORM A SIMPLE/ EASY CATCHING THINGS WITHOUT LOSING  THE ORGINAL MEANING OF THE COMPLEX ONES
+
+-tư duy nắm bắt thông tin cốt lõi quan trọng của object ngoài đời, dùng để biểu diễn lại object đó
+-ví dụ: Sinh viên ở ngoài đời rất phức tạp về info: tên ,tuổi, địa chỉ tt, tạm trú, chíc vaccine, lịch trình di chuyển, gia cảnh, ba mẹ, sở thích, chuyên ngành học, học kì đang học, tình trạng/ deadline, điểm thi các môn, mối quan hệ xã hội,... n thông tin của 1 object, quá complex
+- trường đh ko cần nắm hết info này, vẫn có thể quản lí đc "thứ/object" phức tạp này 
+- tìm ra những info đặc trưng đủ để quản lí, biểu diễn/ minh họa/ mô tả (represent) một sv
+
+- Sinh Viên (id, email trường, tên, địa chỉ tt, phone, chyên ngành, điểm các môn ) rút gọn/ extract chỉ lấy những info quan trọng nhất, có ý nghĩa nhất ra để minh họa để biểu diễn 1 sv bất kì, RÚT GỌN TỪ N INFO Ở TRÊN CÒN VÀI INFO QUAN TRỌNG, BẠN VỪA XONG THAO TÁC TRỪU TƯỢN G HÓA 1 BẠN SV, BIẾN TỪ PHỨC TẠP THÀNH ĐƠN GIẢN VẪN GIỮ NGUYÊN Ý NGHĨA
+
+-> TÌM ĐẶC ĐIỂM QUAN TRỌNG CỦA 1 OBJECT, TÌM DĐ CHO 1 CLASS/ KHUÔN -> ABSTRACTION BIẾN ĐỔI BIỂU DIỄN INFO KO KHIẾN MẤT GỐC BAN ĐẦU
+MÔ TẢ LẠI 1 CÂU CHUYỆN/ THỨ NÀO ĐÓ, ĐỂ AI CX HIỂU ĐC, TÍNH TRỪU TƯỢNG/ TÍNH MÔ TẢ/ NGẮN GỌN TRỪU TƯỢNG HÓA TỨC LÀ KÊ LẠI CÂU CHUYỆN MÔ TẢ TRONG TRÍ NÃO/ HÌNH DUNG TRONG ĐẦU KỂ LẠI CHO AI ĐÓ NGHE VÀ NGƯỜI TA HIỂU ĐC
+
+- bệnh nhân cũng vậy, mã bn, tên, dị ứng, lịch sử khám, đơn thuốc
+
+
+2. ENCAPSULATION - (HỆ QUẢ CỦA TRỪU TƯỢNG HÓA) CÔ LẬP ĐÓNG GÓI MỌI THỨ
+- nhận diện 1 đối tượng gồm đặc tính và hành vi, gom chung trong 1 đơn vị object/clas
+- hàm (xử lí data) + biến (data) gom vào 1 đơn vị code/class/object
+- gom xong giấu/ che đi bằng thuật ngữ private, show ra nếu muốn theo cách public/ protected
+- TẠO CLASS ĐÓNG GÓI MỌI THỨ ĐẶC ĐIỂM + HÀNH VI, CHE VÀ KO CHE
+- giống y chang viên thuốc tây con nhộng - vỏ ngoài là protein - kiểu nhựa - sinh học, tan khi uống vào, vặn vặn tách viên thuốc bên trong thấy bột thuocs.
+Nhìn bên ngòi vỏ thuốc con nhọng, ko thấy thuốc bên trong, ENCAPSULATE (V) GÓI LẠI CHE GIẤU, CÓ THỂ TRONG SUỐT NẾU MUỐN... NHƯNG TRONG CON NHỌNG , KÉN, VỎ NHỰA SINH HỌC CHẮC CHẮN CHỈ CÓ THUÓC
+-gom info và xử lí vào trong 1 đơn vị, chư giấu show ra khi cần thiết
+- TIVI: che bằng cái vỏ nhựa đen/xanh/bạc/ màn hình, ta chỉ tương tác qua remote/ nút bấm ko tháy bên trong tivi ra sao, xử lí info + quét data bộ phim wifi/vô tuyến, éo qun tâm đứng ngoài tivi giao tiếp qua public nút bấm, tivi chính là encapsulate
+- ATM cũng vậy, ko thấy khay tienf private, ko thấy cục hít tiền, ko tháy hành xử bên trong chỉ public cái hành động nút bám nút rút tiền,,..
+đóng gói, gói cho việc rút tiền, ko làm việc khác
+
+Tivi duyệt wed, xem phim, chấm hết
+xe máy che hết dây, ống, khung, xấu xí qua vỏ, bửng xe, dàn mủ, public ra cái nút bám, tay gas xài. Xe máy éo quan tam wifi, tiền, ...
+
+ENCAPSULATION CHÍNH LÀ CÁCH GOM BIẾN/ DATA VÀ HÀM VÀO 1 ĐƠN VỊ ĐỐI TƯỢNG/VẬT THỂ/OBJECT/CLASS CHỈ LÀM ĐÚNG VIỆC NÓ ĐC CHỈ ĐỊNH THIẾT KẾ
+GOM GÌ THÌ CẦN ABSTRACTION ĐỂ LẤY CÁI ĐẶC TRƯNG
+TIVI XEM PHIM, KO GÁNH THÊM VIỆC LÒ NƯỚNG
+
+ABSTRACTION LÀ LẤY RA ĐẶC TRƯNG, ENCAPSULATION LÀ GÓI TRỌN VẸN ĐÚNG THỨ CẦN LÀM 
+nhận diện  object			tạo class instance variable + method()
+
+3. INHERITANCE - TÁI SỬ DỤNG/ CÓ XÀI LUÔN, KO CẦN THAO TÁC GÌ THÊM, KO PHẢI COPY&PAST
+- Reuse lại code ko cần phải làm lại code, thậm chí ko cần phải copy&past
+- Con thừa kế di sản tài sản di truyền sự thông minh và giỏi giang từ ba má!!!
+- Tăng tốc quá trình viết code khi có đoạn code, object đã làm tốt việc cảu nó rồi 
+ta tận dụng để mở rộng thêm khả năng của object mới, dùng lai đồ object cũ + dị biệt ta làm thêm
+TĂNG TỐC LÀM: BA MÁ GIÀU CÓ. CÓ TIỀN, MÌNH THUẬN LỢI CÓ VỐN LÀM ĂN
+	      BA MÁ CHO CĂN NHÀ, MÌNH ĐỠ LO TIỀN TRỌ, TA CHỈ LO TIỀN ĂN,
+	      BA MÁ CHO VỐN, TA LÀM GIÀU NHANH HƠN, KO ÁP LỰC TRẢ NỢ, LỜI GIỮ LUN
+	      THAY VÌ BÒN RÚT KIỂU BẤT HIẾU, XÀI MÀ KO CHỊU LÀM THÊM 
+			NAY TA BẬT NHANH HƠN, HÔI NHẬP, JOIN CUỘC SỐNG NHANH TỰ TI HƠN
+CÓ THƯ VIỆN VIẾT CODE LÀM APP CHO NHANHM KO LÀM LẠI TỪ ĐẦU
+CÓ THƯ VIỆN, MỎ RỌNG THƯ VIỆN CHO NHU CẦU RIÊNG, ĐA NĂNG SỬ DỤNG, TĂNG TỐC VIẾT CODE
+CHA CỤ THỂ, CHA TRỪU TƯỢNG, CAY PHÂN LOẠI GIẢNG HÔM BỮA RỒI, BÀI 24
+ABSTRACT CLASS CHẲNG QUA LÀ CÁCH GOM, PHÂN LOẠI ĐỐI TƯỢNG MỨC CAO THẤP
+					GIỐNG NHƯ PHÂN LOẠI SỰ VẬT NGOÀI ĐỜI, GOM NHÓM NGOÀI ĐỜI
+
+TẬN DUNG KẾ THUWAFD THÀNH QUẢ OBJECT CÓ CÁI GÌ??? DÙNG LẠI NGUYÊN TẮC TRỪ TƯỢNG HÓA + ENCAP
+
+4. POLYMORPHISM - ĐA HÌNH/ ĐA ÁNH XẠ - MỘT RA NHIỀU
+- Mùa đông 1946, Bác hồ kêu gọi toàn quốc kháng chiến, ai có súng dùng súng, ai có dao dùng dao...
+  Chỉ là 1 câu kêu gọi: CHIẾN()
+  Nhân dân quật khởi đứng lên: dao, kiếm, liềm ,móc câu, hầm chông, sùng đớt,...
+				đa dạng cách giết giặc, đa dạng cách implements hành động Chiến() từ 1 chữ Chiến() CÓ N CÁCH LAM KHÁC NHAU, TÍNH ĐA DẠNG, BIẾN HÌNH, ĐA SẮC THÁI, ĐA NHÂN CÁCH, ĐA HÀNH, POLYMORPHISM
+Đại ca kêu tối nay giang hồ chợ lớn, đi chiến nha()
+						đàn em đem hàng: mã tấu, dao, nongs, côn nhị khúc,..
+Các Vua hùng đã công dựng nước, Bác Chá ta phải implements/ Override
+từ 1 hàm Cha, n con @Override qua mặt, chính là tính đa hình
+Gọi cha mà Con chạy
+Đảm bảo tính đa dạng của các hành động vẫn chơi chung và thống nhất hành động qua tên gọi @Override hiện thực cho tính đa dạng 
+
+

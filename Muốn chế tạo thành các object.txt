@@ -1,0 +1,19 @@
+0. Muốn chế tạo thành các object, dùng tư duy khuon -> nhân abnr obj, nhân bản
+[DONE]
+
+1.Muốn chế tạo nhanh cái khuuoon, ta dùng kế thừa, dùng lại 1 cái lhuoon nào có trước để độ
+lại (biến dị đó), xài lại cái cũ + thêm cái mới - [DONE]
+
+2.TÌM ĐIỂM TƯƠNG ĐỒNG GIỮA CÁC CÁI KHUÔN, LÀM NHANH KHUÔN TỔ, NHÂN BẢN
+KHUÔN CON -> OBJECT CON NHANH VÀ NHIỀU VÀ ĐA DẠNG 
+HÌNH THỨC PHÂN LOẠI  DẪN ĐẾN CHUNG CHUNG, ABSTRACT
+
+CÙNG HỌ CHƠI CHUNG, CÙNG PHIÊN BẢN CHƠI CHUNG, CÙNG ĐẶC ĐIỂM & HÀNH ĐỘNG CHƠI CHUNG
+
+
+3.CÓ MỘT CÁCH "PHÂN LOẠI" LỎNG LẺO HƠN, CÁCH CÁC KHUÔN KHÁC NHAU ĐẶC ĐIỂM VÀ VẪN CHƠI ĐC CHUNG VỚI NHAU
+NHÓM LỎNG LẺO HƠN, MIỄN LÀ CHUNG??
+
+Ta cần chế tạo nhiều khuôn mà lại CHẾ TẠO nhanh đẻ từ đó ra object cho nhanh
+vẫn là kế thừa mà thôi !!!!, vẫn phải dùng lại khuôn nào đó
+vấn đề là dùng 
