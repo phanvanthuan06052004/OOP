@@ -1,0 +1,23 @@
+OBJECT VS. CLASS
+1. Object là: gom n value phức tạp
+		là 1 vật thể, thứ gì đó, thing mà có những đđ	, hv là những thứ ta có thể đếm, sờ, mô tả, phân biệt được
+
+2. Class: sự phân nhóm, tên gọi cho 1 nhóm các đối tượng 
+	theo 1 tiêu chí nào đó
+	tiếu chí: hát -> Nhóm CaSi - class CaSi
+	tiêu chí: đóng phim -> Nhóm DienVien
+
+3. Có nhiều đối tượng xuất hiện, gom nhóm đc rồi thành class 
+-> làm sao lưu trữ, quản lí, xử lí các đối tượng này
+
+4. OPP: giống y chang kĩ thuật đúc tượng 
+	muốn làm oject nào, ta tạo khuôn cho nhóm object đó/ class khuôn đúc ra cúp, Class Cup
+	khuôn CaSi lưu được info các CaSi, Template Class Singer
+
+	từ object tạo ra khuôn, sau này đúc trở lại các object
+
+****CHÚ Ý:
+-có bao nhiêu kiểu dữ kieeuuj trong java: 2 (giá trị đơn giản và phức tạp)
+-có bao nhiêu kiểu primitive trong java: 8 kiểu (int, long,.....)
+- có bao nhiêu kiểu oobject trong java: vô số(người, chó, nnhaan viên,....)
+

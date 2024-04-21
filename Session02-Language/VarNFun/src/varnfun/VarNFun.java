@@ -11,7 +11,10 @@ public class VarNFun {
 
     
     public static void main(String[] args) {
-        getAPositiveInteger();
+        int n;
+        
+        n = getAPositiveInteger();
+        
         printInterList(n); //truyền tham trị, pass by value
                             //valuetuwfuwf n của hàm main() sẽ đc đưa qua ngõ/ ngả
                             //phễu máy xay, n main() đập ngang sang n của hàm

@@ -1,0 +1,16 @@
+CÁC VÙNG NHỚ TRONG RAM 
+
+*THƯỜNG THÌ CÓ 3 LOẠI CHỦ YẾU  DÙNG:
+
+-1 vung chứa code chương trình ,CODE SEGMENT 
+-vùng HEAP xin thì ta cho, mỗi nhác new tronng main sẽ đưa vào HEAP, HEAP SEGMENT
+-Vùng STACK SEGMENT chịu sự quản lí của window ko tự do xin như HEAP, chứa tên biến, địa chỉ, tọa độ để trỏ tới khi cần, lưu trữ tham số và các biến local
+
+** Biến object hay còn gọi là biến con trỏ, trỏ đến vùng RAM lớn, reference
+
+
+**LƯU Ý: khi dữ liệu trong vùng nhớ HEAP ko còn ai trỏ tới thì JVM sẽ thực hiện chức năng xóa bộ nhớ rác (Garbage Collector tương đương với lệnh malloc bên C), để tránh trường hợp trên xảy ra chúng ta cần backup dữ liệu qua một biến khác để tránh trường hợp đánh mất dữ liệu
+
+**2 chàng trỏ 1 nàng: nàng thay đổi thì thay đổi tất
+
+**REGULAR EXPRESSION: kiểm tra tính đúng đắn khi người dùng nhập dữ liệu vào
